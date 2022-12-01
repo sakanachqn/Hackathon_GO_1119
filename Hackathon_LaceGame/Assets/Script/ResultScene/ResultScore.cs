@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ObstacleHitController : MonoBehaviour
+public class ResultScore : MonoBehaviour
 {
-    // ìñÇΩÇ¡ÇΩéûÇ…åƒÇŒÇÍÇÈä÷êî
-    void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Hit"); // ÉçÉOÇï\é¶Ç∑ÇÈ
-    }
+    [SerializeField]
+    GameObject ResScore = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +16,8 @@ public class ObstacleHitController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Text res_score = ResScore.GetComponent<Text>();
+
+        res_score.text = ScoreCount.score.ToString("N0") + "m!";
     }
 }
