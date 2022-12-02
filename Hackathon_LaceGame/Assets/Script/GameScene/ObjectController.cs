@@ -16,7 +16,7 @@ public class ObjectController : MonoBehaviour
     {
         if (ScoreCount.IsGameStart)
         {
-            transform.position -= new Vector3(0, BackGround.speed / 2 * Time.deltaTime, 0);
+            transform.position -= new Vector3(0, BackGround.speed * Time.deltaTime, 0);
 
             if (transform.position.y < -5)
             {
