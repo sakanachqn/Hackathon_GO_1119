@@ -9,6 +9,10 @@ public class ObjectCreator : MonoBehaviour
 
     private int rndint;
     private int rndlane;
+
+    private bool pool = false;
+
+    private float time;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,33 +22,38 @@ public class ObjectCreator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rndint = Random.Range(0, 500);
-        if (rndint == 1)
+        if (ScoreCount.IsGameStart)
         {
-            rndlane = Random.Range(1, 5);
-            switch(rndlane)
+            time += Time.deltaTime;
+            //オブジェクト生成位置決定
+            if (time >= 0.7)
             {
-                case 1:
-                    Instantiate(gobj);
-                    gobj.transform.position = new Vector3(-4.6f, 6, 0);
-                    break;
-                case 2:
-                    Instantiate(gobj);
-                    gobj.transform.position = new Vector3(-2.3f, 6, 0);
-                    break;
-                case 3:
-                    Instantiate(gobj);
-                    gobj.transform.position = new Vector3(0, 6, 0);
-                    break;
-                case 4:
-                    Instantiate(gobj);
-                    gobj.transform.position = new Vector3(2.3f, 6, 0);
-                    break;
-                case 5:
-                    Instantiate(gobj);
-                    gobj.transform.position = new Vector3(4.6f, 6, 0);
-                    break;
+                rndlane = Random.Range(1, 5);
+                switch (rndlane)
+                {
+                    case 1:
+                        Instantiate(gobj);
+                        gobj.transform.position = new Vector3(-4.6f, 6, 0);
+                        break;
+                    case 2:
+                        Instantiate(gobj);
+                        gobj.transform.position = new Vector3(-2.3f, 6, 0);
+                        break;
+                    case 3:
+                        Instantiate(gobj);
+                        gobj.transform.position = new Vector3(0, 6, 0);
+                        break;
+                    case 4:
+                        Instantiate(gobj);
+                        gobj.transform.position = new Vector3(2.3f, 6, 0);
+                        break;
+                    case 5:
+                        Instantiate(gobj);
+                        gobj.transform.position = new Vector3(4.6f, 6, 0);
+                        break;
 
+                }
+                time = 0;
             }
         }
     }

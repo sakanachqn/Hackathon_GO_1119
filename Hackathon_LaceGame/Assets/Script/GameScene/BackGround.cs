@@ -15,11 +15,14 @@ public class BackGround : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position -= new Vector3(0, Time.deltaTime * speed);
-
-        if(transform.position.y <= -11f)
+        if (ScoreCount.IsGameStart)
         {
-            transform.position = new Vector3(-0.4f, 10f);
+            transform.position -= new Vector3(0, Time.deltaTime * speed);
+
+            if (transform.position.y <= -11f)
+            {
+                transform.position = new Vector3(-0.4f, 10f);
+            }
         }
     }
 }

@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameoverCheck : MonoBehaviour
 {
+    [SerializeField]
+    SoundManager soundManager;
+    [SerializeField]
+    private AudioClip GOSE;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +23,16 @@ public class GameoverCheck : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        StartCoroutine(GameOver());
+    }
+
+    private IEnumerator GameOver()
+    {
+        soundManager.Stop();
+        soundManager.Play(GOSE);
+        ScoreCount.IsGameStart = false;
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("ResultScene");
+        
     }
 }

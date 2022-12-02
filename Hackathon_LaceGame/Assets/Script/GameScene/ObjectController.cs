@@ -14,11 +14,14 @@ public class ObjectController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position -= new Vector3(0, BackGround.speed / 2 * Time.deltaTime, 0);
-        
-        if(transform.position.y < -6)
+        if (ScoreCount.IsGameStart)
         {
-            Destroy(this.gameObject);
+            transform.position -= new Vector3(0, BackGround.speed / 2 * Time.deltaTime, 0);
+
+            if (transform.position.y < -5)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }
