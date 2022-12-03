@@ -704,6 +704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundManager: {fileID: 813470445}
   GOSE: {fileID: 8300000, guid: 59462d79cef13ab4786c020bca7d86cf, type: 3}
+  BuffSE: {fileID: 8300000, guid: be02645925ae5ca408dae4ddb9e83f88, type: 3}
 --- !u!61 &1929064457
 BoxCollider2D:
   m_ObjectHideFlags: 0
