@@ -23,7 +23,6 @@ public class ScoreCount : MonoBehaviour
     {
         StartCoroutine(countdown());
         score = 0;
-
     }
 
     // Update is called once per frame
