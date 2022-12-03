@@ -17,7 +17,7 @@ public class BackGround : MonoBehaviour
     {
         if (ScoreCount.IsGameStart)
         {
-            transform.position -= new Vector3(0, Time.deltaTime * speed);
+            transform.position -= new Vector3(0, speed * GameoverCheck.BuffSpeed * Time.deltaTime);
 
             if (transform.position.y <= -11f)
             {

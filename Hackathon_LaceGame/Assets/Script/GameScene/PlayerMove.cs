@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     //¶‰EˆÚ“®‚Ì‹——£Žw’è
     [SerializeField]
-    float Move = 2.1f;
+    float Move = 2.3f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,13 @@ public class PlayerMove : MonoBehaviour
         if (ScoreCount.IsGameStart)
         {
             PLMove();
+            if (GameoverCheck.BuffSpeed >= 1)
+            {
+                GameoverCheck.BuffSpeed -= Time.deltaTime / 2;
+            }
         }
+
+
     }
 
     void PLMove()

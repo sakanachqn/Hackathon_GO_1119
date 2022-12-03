@@ -30,7 +30,7 @@ public class ScoreCount : MonoBehaviour
     {
         if (IsGameStart)
         {
-            score += BackGround.speed * Time.deltaTime;
+            score += BackGround.speed * GameoverCheck.BuffSpeed * Time.deltaTime;
 
             Text scoreText = Score_UI.GetComponent<Text>();
 

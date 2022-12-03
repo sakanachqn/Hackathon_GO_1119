@@ -9,6 +9,10 @@ public class GameoverCheck : MonoBehaviour
     SoundManager soundManager;
     [SerializeField]
     private AudioClip GOSE;
+    [SerializeField]
+    private AudioClip BuffSE;
+
+    public static float BuffSpeed = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +27,15 @@ public class GameoverCheck : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        StartCoroutine(GameOver());
+        if (other.gameObject.tag == "Obstacle")
+        {
+            StartCoroutine(GameOver());
+        }
+        else if(other.gameObject.tag == "BuffObstacle")
+        {
+            soundManager.Play(BuffSE);
+            BuffSpeed++;
+        }
     }
 
     private IEnumerator GameOver()
