@@ -10,7 +10,6 @@ public class ObjectCreator : MonoBehaviour
     private int rndint;
     private int rndlane;
 
-    private bool pool = false;
 
     private float time;
     // Start is called before the first frame update

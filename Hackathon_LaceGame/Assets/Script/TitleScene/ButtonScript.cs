@@ -11,7 +11,6 @@ public class ButtonScript : MonoBehaviour
     private AudioClip clickSE;
 
     private bool IsStartGame = false;
-    private bool NowScenChange = false;
     // Start is called before the first frame update
     void Start()
     {
